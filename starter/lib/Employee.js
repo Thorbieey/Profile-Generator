@@ -20,7 +20,6 @@ class Employee {
         return this.email;
     }
     getRole() {
-        console.log("Role: Employee")
         return "Employee"
     }
 }
