@@ -1,9 +1,11 @@
-const Employee = require ("./Employee.js");
+const Employee = require ("./Employee");
 
 // Manager class
-class Manager {
-    constructor(officeNumber) {
-        const manager = new Employee();
+class Manager extends Employee{
+    constructor(name, id, email, officeNumber) {
+        
+        super(name, id, email);
+        
         this.officeNumber = officeNumber;
     }
     
@@ -20,8 +22,12 @@ class Manager {
     }
 }
 
-const tobi = new Manager(123);
+const tobi = new Manager("Tobi", 40, "tobi@yahoo.com", 123);
 
+tobi.getName();
+tobi.getId();
+tobi.getEmail();
+console.log("Role: " + tobi.getRole());
 tobi.getOfficeNumber();
 
-// module.exports = Manager
+module.exports = Manager

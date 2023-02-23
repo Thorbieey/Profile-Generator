@@ -1,4 +1,4 @@
-// const Manager = require("./lib/Manager");
+const Manager = require("./lib/Manager.js");
 // const Engineer = require("./lib/Engineer");
 // const Intern = require("./lib/Intern");
 import inquirer from 'inquirer';
@@ -41,6 +41,7 @@ async function init() {
         )
         .then((response) => {
             if (response.menu === "Add an engineer") {
+                const manager = new Manager(123);
                 console.log(response)
                 addEngineer();
             } 

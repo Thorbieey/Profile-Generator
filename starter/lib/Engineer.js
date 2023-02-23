@@ -1,12 +1,11 @@
-const Employee = require ("./Employee.js");
+const Employee = require ("./Employee");
 
 // Engineer class
-class Engineer {
-    constructor(github) {
-        const engineer = new Employee();
+class Engineer extends Employee{
+    constructor(name, id, email, github) {
+        super(name, id, email);
+
         this.github = github;
-        console.log(engineer)
-        // console.log(${this.role})
     }
     
     // methods which gets engineer github username and updates role to "Engineer"
@@ -22,8 +21,12 @@ class Engineer {
     }
 }
 
-const tobi = new Engineer("Thorbieey");
+const tobi = new Engineer("Tobi", 40, "tobi@yahoo.com", "Thorbieey");
 
+tobi.getName();
+tobi.getId();
+tobi.getEmail();
+console.log("Role: " + tobi.getRole());
 tobi.getGithub();
 
-// module.exports = Engineer
+module.exports = Engineer

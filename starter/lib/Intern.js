@@ -1,9 +1,10 @@
 const Employee = require ("./Employee.js");
 
 // Intern class
-class Intern {
-    constructor(school) {
-        const intern = new Employee();
+class Intern extends Employee{
+    constructor(name, id, email, school) {
+        super(name, id, email);
+
         this.school = school;
     }
     
@@ -20,8 +21,12 @@ class Intern {
     }
 }
 
-const tobi = new Intern("De-Montfort University");
+const tobi = new Intern("Tobi", 40, "tobi@yahoo.com", "De-Montfort University");
 
+tobi.getName();
+tobi.getId();
+tobi.getEmail();
+console.log("Role: " + tobi.getRole());
 tobi.getSchool();
 
-// module.exports = Intern
+module.exports = Intern
