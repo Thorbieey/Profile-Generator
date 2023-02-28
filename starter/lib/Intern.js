@@ -21,12 +21,4 @@ class Intern extends Employee{
     }
 }
 
-const tobi = new Intern("Tobi", 40, "tobi@yahoo.com", "De-Montfort University");
-
-tobi.getName();
-tobi.getId();
-tobi.getEmail();
-console.log("Role: " + tobi.getRole());
-tobi.getSchool();
-
 module.exports = Intern

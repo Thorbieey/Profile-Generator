@@ -21,12 +21,4 @@ class Engineer extends Employee{
     }
 }
 
-const tobi = new Engineer("Tobi", 40, "tobi@yahoo.com", "Thorbieey");
-
-tobi.getName();
-tobi.getId();
-tobi.getEmail();
-console.log("Role: " + tobi.getRole());
-tobi.getGithub();
-
 module.exports = Engineer

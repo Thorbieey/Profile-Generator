@@ -22,12 +22,4 @@ class Manager extends Employee{
     }
 }
 
-const tobi = new Manager("Tobi", 40, "tobi@yahoo.com", 123);
-
-tobi.getName();
-tobi.getId();
-tobi.getEmail();
-console.log("Role: " + tobi.getRole());
-tobi.getOfficeNumber();
-
 module.exports = Manager
