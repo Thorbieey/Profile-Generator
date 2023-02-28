@@ -124,6 +124,15 @@ async function addIntern() {
             type: 'input',
             name: 'school',
             message: "Please enter the intern's school"
+        },
+        {
+            type: 'list',
+            name: 'role',
+            message: "Would you like to add another employee or finish building team",
+            choices: ['Add an engineer', 'Add an intern', 'Finish building the team'],
+            filter(role) {
+                return role;
+            } 
         }]
     )
     // Generate new Intern: extract intern's info from response, create new instance for Intern object and add to team array
