@@ -21,6 +21,7 @@
     "jest": "^29.4.3"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "inquirer": "^9.1.4"
   }
 }

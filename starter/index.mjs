@@ -19,22 +19,47 @@ async function init() {
         [{
             type: 'input',
             name: 'name',
-            message: "Please enter the team manager's name"
+            message: "Please enter the team manager's name",
+            validate: nameInput => {
+                if (typeof nameInput !== "string" || !nameInput.trim().length) {
+                    throw new Error("Expected input 'name' has to be a non-empty string");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'employeeID',
-            message: "Please enter the team manager's employee ID"
+            message: "Please enter the team manager's employee ID",
+            validate: idInput => {
+                if (isNaN(idInput) || (!idInput.trim().length)) {
+                    throw new Error("Expected input 'id' has to be a number");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: "Please enter the enter the team manager's email address"
+            message: "Please enter the enter the team manager's email address",
+            validate: email => {
+                const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailFormat.test(email) === false ) {
+                    throw new Error("Expected input 'email' needs to be in format sampleEmail@sample.com");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'officeNumber',
-            message: "Please enter the team manager's office number"
+            message: "Please enter the team manager's office number",
+            validate: officeNumber => {
+                if (isNaN(officeNumber) || !officeNumber.trim().length) {
+                    throw new Error("Expected input 'Office Number' has to be a number");
+                }
+                return true;
+            }
         },
         {
             type: 'list',
@@ -64,22 +89,47 @@ async function addEngineer() {
         [{
             type: 'input',
             name: 'name',
-            message: "Please enter the engineer's name"
+            message: "Please enter the engineer's name",
+            validate: name => {
+                if (typeof name !== "string" || !name.trim().length) {
+                    throw new Error("Expected input 'name' has to be a non-empty string");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'employeeID',
-            message: "Please enter the engineer's employee ID"
+            message: "Please enter the engineer's employee ID",
+            validate: employeeID => {
+                if (isNaN(employeeID) || !employeeID.trim().length) {
+                    throw new Error("Expected input 'id' has to be a number");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: "Please enter the engineer's email address"
+            message: "Please enter the engineer's email address",
+            validate: email => {
+                const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailFormat.test(email) === false ) {
+                    throw new Error("Expected input 'email' needs to be in format sampleEmail@sample.com");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'github',
-            message: "Please enter the engineer's GitHub username"
+            message: "Please enter the engineer's GitHub username",
+            validate: github => {
+                if (typeof github !== "string" || !github.trim().length) {
+                    throw new Error("Expected input 'github' has to be a non-empty string");
+                }
+                return true;
+            }
         },
         {
             type: 'list',
@@ -108,22 +158,47 @@ async function addIntern() {
         [{
             type: 'input',
             name: 'name',
-            message: "Please enter the intern's name"
+            message: "Please enter the intern's name",
+            validate: name => {
+                if (typeof name !== "string" || !name.trim().length) {
+                    throw new Error("Expected input 'name' has to be a non-empty string");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'employeeID',
-            message: "Please enter the intern's employee ID"
+            message: "Please enter the intern's employee ID",
+            validate: employeeID => {
+                if (isNaN(employeeID) || !employeeID.trim().length) {
+                    throw new Error("Expected input 'id' has to be a number");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: "Please enter the intern's email address"
+            message: "Please enter the intern's email address",
+            validate: email => {
+                const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailFormat.test(email) === false ) {
+                    throw new Error("Expected input 'email' needs to be in format sampleEmail@sample.com");
+                }
+                return true;
+            }
         },
         {
             type: 'input',
             name: 'school',
-            message: "Please enter the intern's school"
+            message: "Please enter the intern's school",
+            validate: school => {
+                if (typeof school !== "string" || !school.trim().length) {
+                    throw new Error("Expected input 'School' has to be a non-empty string");
+                }
+                return true;
+            }
         },
         {
             type: 'list',

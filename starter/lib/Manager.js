@@ -11,10 +11,6 @@ class Manager extends Employee{
     
     // methods which gets Manager's office number and updates role
     getOfficeNumber() {
-        if (typeof this.officeNumber !== "number" ) {
-            throw new Error("Expected parameter 'Office number' has to be a number");
-        }
-        console.log(`Office-Number: ${this.officeNumber}`); 
         return this.officeNumber;
     }
     getRole() {
