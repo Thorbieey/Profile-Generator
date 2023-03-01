@@ -2,13 +2,16 @@ import inquirer from 'inquirer';
 import Manager from './lib/Manager.js';
 import Engineer from './lib/Engineer.js';
 import Intern from './lib/Intern.js';
+import path from 'path';
+import fs from 'fs';
+import render from './src/page-template.js';
 
 let team = []
 // const path = require("path");
 // const fs = require("fs");
 
-// const OUTPUT_DIR = path.resolve(__dirname, "output");
-// const outputPath = path.join(OUTPUT_DIR, "team.html");
+const OUTPUT_DIR = path.dirname("output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 // const render = require("./src/page-template.js");
 
@@ -229,5 +232,8 @@ function confirmTeamComplete(response) {
         addIntern();
     } 
     else if (response.role === "Finish building the team") {
+        console.log("Team Profile has been generated.");
+        let htmlDoc = render(team)
+        fs.writeFile("index.html", htmlDoc)
     }
 }
