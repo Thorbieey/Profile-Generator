@@ -1,3 +1,4 @@
+// imported classes and dependencies
 import inquirer from 'inquirer';
 import Manager from './lib/Manager.js';
 import Engineer from './lib/Engineer.js';
@@ -6,14 +7,12 @@ import path from 'path';
 import fs from 'fs';
 import render from './src/page-template.js';
 
+// Array of team profile i.e., Manager, Intern, Engineer
 let team = []
-// const path = require("path");
-// const fs = require("fs");
 
-const OUTPUT_DIR = path.dirname("output");
+// assigning output directory and link to generated team.html
+const OUTPUT_DIR = "output";
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
-// const render = require("./src/page-template.js");
 
 init();
 // function to initialize program and start bulding team
@@ -74,12 +73,10 @@ async function init() {
             }
         }]
     )
-    // Generate new Manager: extract manager's info from response, create new instance for manager object and add to team array
+    // Generate new Manager: extract manager's info from response, create new instance for manager object and push to team array
     const  {name, employeeID, email, officeNumber} = response; 
     const newManager = new Manager (name, employeeID, email, officeNumber);
     team.push(newManager); 
-    console.log(team);
-
 
     // Call function to confirm whether user would like to add new team member
     confirmTeamComplete(response);
@@ -148,7 +145,6 @@ async function addEngineer() {
     const  {name, employeeID, email, github} = response; 
     const newEngineer = new Engineer (name, employeeID, email, github);
     team.push(newEngineer); 
-    console.log(team);
 
     // Call function to confirm whether user would like to add new team member
     confirmTeamComplete(response);
@@ -217,7 +213,6 @@ async function addIntern() {
     const  {name, employeeID, email, school} = response; 
     const newIntern = new Intern (name, employeeID, email, school);
     team.push(newIntern); 
-    console.log(team);
 
     // Call function to confirm whether user would like to add new team member
     confirmTeamComplete(response);
@@ -226,14 +221,22 @@ async function addIntern() {
 // Function to confirm whether user would like to add new team member
 function confirmTeamComplete(response) {
     if (response.role === "Add an engineer") {
-        addEngineer();
+        addEngineer(); // call function to add an engineer to the team being built
     } 
     else if (response.role === "Add an intern") {
-        addIntern();
+        addIntern(); // call function to add an intern to the team being built
     } 
     else if (response.role === "Finish building the team") {
-        console.log("Team Profile has been generated.");
-        let htmlDoc = render(team)
-        fs.writeFile("index.html", htmlDoc)
+        writeToFile(outputPath, render(team), "utf-8"); // call function to write index.html file
     }
+}
+
+// function to write index.html file
+function writeToFile(fileName, data, encoding) {
+    console.log('writeToFile');
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        // create output directory if it does'nt exist
+        fs.mkdirSync(OUTPUT_DIR)
+      }
+      fs.writeFileSync(fileName, data, encoding);
 }
