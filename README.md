@@ -54,6 +54,7 @@ A Node.js command-line application that collects information about employees on 
 * [License](#license)
 * [Contributors](#contributors)
 * [Tests](#tests)
+* [Credits](#credits)
 * [Questions](#questions)
 
 ---
@@ -117,6 +118,15 @@ When contributing to this repository, please first discuss the change you wish t
 - Run jest in commant line.
 
         npm run test
+
+---
+## Credits
+
+- [Learn about path.js](https://nodejs.org/api/path.html#pathjoinpaths)
+
+- [Explore npm's: **inquirer**](https://www.npmjs.com/package/inquirer)
+
+- [Learn about the new operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/newo)
 
 ---
 ## Questions
