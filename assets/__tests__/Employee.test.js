@@ -1,5 +1,5 @@
 const { describe } = require("yargs");
-const Employee = require("../lib/Employee");
+const Employee = require("../starter/lib/Employee");
 
 
 

@@ -1,11 +1,11 @@
 // imported classes and dependencies
 import inquirer from 'inquirer';
-import Manager from './lib/Manager.js';
-import Engineer from './lib/Engineer.js';
-import Intern from './lib/Intern.js';
+import Manager from './assets/lib/Manager.js';
+import Engineer from './assets/lib/Engineer.js';
+import Intern from './assets/lib/Intern.js';
 import path from 'path';
 import fs from 'fs';
-import render from './src/page-template.js';
+import render from './assets/src/page-template.js';
 
 // Array of team profile i.e., Manager, Intern, Engineer
 let team = []
@@ -233,7 +233,7 @@ function confirmTeamComplete(response) {
 
 // function to write index.html file
 function writeToFile(fileName, data, encoding) {
-    console.log('writeToFile');
+    console.log('Team Profile Generated!!! Please view output folder for file.');
     if (!fs.existsSync(OUTPUT_DIR)) {
         // create output directory if it does'nt exist
         fs.mkdirSync(OUTPUT_DIR)
