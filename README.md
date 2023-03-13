@@ -2,7 +2,7 @@
   
 ## Description 
   
-A Node.js command-line application that collects information about employees on a software team, then genrates an HTML webpage that displays each employee's profile.
+A Node.js command-line application that collects information about employees on a software team, then generates an HTML webpage that displays each employee's profile.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
